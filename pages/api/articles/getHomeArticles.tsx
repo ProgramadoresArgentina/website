@@ -21,7 +21,7 @@ export default async function getHomeArticles(req: NextApiRequest, res: NextApiR
         take: 3
       })
 
-      const formattedBlogs = getAllArticles.map((data: ArticleTableProps) => {
+      const formattedBlogs = getAllArticles.map((data: any) => {
         return {
           category: data.category!.name,
           content: data.content,

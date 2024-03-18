@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: proyecto-ada
+spec:
+  selector:
+    matchLabels:
+      app: proyecto-ada
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: proyecto-ada
+    spec:
+      containers:
+        - name: proyecto-ada
+          image: programadoresargentina/proyecto-ada
+          ports:
+            - containerPort: 3000

@@ -27,12 +27,16 @@ export function Contact() {
     e.preventDefault();
     setSended("loading");
 
+    const SERVICE_ID_EMAILJS: string = process.env.SERVICE_ID_EMAILJS || '';
+    const TEMPLATE_ID_EMAILJS: string = process.env.TEMPLATE_ID_EMAILJS || '';
+    const USER_ID_EMAILJS: string = process.env.USER_ID_EMAILJS || '';
+
     emailjs
       .sendForm(
-        process.env.SERVICE_ID_EMAILJS,
-        process.env.TEMPLATE_ID_EMAILJS,
+        SERVICE_ID_EMAILJS,
+        TEMPLATE_ID_EMAILJS,
         form.current,
-        process.env.USER_ID_EMAILJS
+        USER_ID_EMAILJS
       )
       .then(() => {
         setSended("send");

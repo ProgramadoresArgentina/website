@@ -40,7 +40,7 @@ export default async function ArticlesPagination(req: NextApiRequest, res: NextA
         prisma.articles.count()
       ]);
 
-      const formattedBlogs = allBlogs.map((data: ArticleTableProps) => {
+      const formattedBlogs = allBlogs.map((data: any) => {
         return {
           category: data.category!.name,
           content: data.content,
